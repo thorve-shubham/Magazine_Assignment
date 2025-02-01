@@ -1,18 +1,29 @@
-from pydantic  import BaseModel, Field, validator
-from datetime import datetime
+from sqlalchemy import Column, Integer, String, Date, ForeignKey, Text
+from sqlalchemy.orm import relationship
+from app.database import Base
+from pgvector.sqlalchemy import Vector
+from sqlalchemy.dialects.postgresql import TSVECTOR
 
-class Magazine(BaseModel):
-    title: str = Field(..., min_length=1, max_length=100)
-    author: str = Field(..., min_length=1, max_length=50)
-    publish_date: str
-    category: str = Field(..., min_length=1, max_length=50)
-    content: str = Field(..., min_length=1)
+class MagazineInformation(Base):
+    __tablename__ = "magazine_information"
 
-    # Validate publish_date format (YYYY-MM-DD)
-    @validator("publish_date")
-    def validate_publish_date(cls, value):
-        try:
-            datetime.strptime(value, "%Y-%m-%d")
-        except ValueError:
-            raise ValueError("publish_date must be in the format YYYY-MM-DD")
-        return value
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    title = Column(String, index=True)
+    author = Column(String)
+    category = Column(String)
+    publish_date = Column(Date)
+
+    # One-to-One relationship with MagazineContent
+    content = relationship("MagazineContent", back_populates="magazine", uselist=False, cascade="all, delete")
+
+class MagazineContent(Base):
+    __tablename__ = "magazine_content"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    magazine_id = Column(Integer, ForeignKey("magazine_information.id"))
+    content = Column(String)
+    content_tsvector = Column(TSVECTOR)
+    content_embedding = Column(Vector(384))
+
+    # One-to-One relationship back to MagazineInformation
+    magazine = relationship("MagazineInformation", back_populates="content")
