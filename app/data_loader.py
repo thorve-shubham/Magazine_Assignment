@@ -3,29 +3,39 @@ import requests
 import logging
 from datetime import datetime
 
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Call the API to add magazines
 def call_api(magazines_batch):
-    url = "http://localhost:8000/api/magazines"
+    url = "http://localhost:8000/api/magazine"
     headers = {
         'Content-Type': 'application/json'
     }
     
     try:
+        # Send POST request to the API
         response = requests.post(url, json=magazines_batch, headers=headers)
-        response.raise_for_status()  
-        result = response.json() 
+        response.raise_for_status()  # Raise an exception for HTTP errors
         
-        if isinstance(result, list): 
+        # Parse the JSON response
+        result = response.json()
+        # print(result)
+        # print(type(result))
+        # Check if the response contains the expected structure
+        if isinstance(result, list):
             for magazine in result:
-                logger.info(f"Magazine {magazine['magazine_id']} added successfully.")
+                logger.info(f"Magazine {magazine['id']} added successfully.")
             return True
         else:
             logger.error("Unexpected response format from API.")
             return False
+    
     except requests.exceptions.RequestException as e:
         logger.error(f"API call failed: {e}")
+        return False
+    except ValueError as e:
+        logger.error(f"Failed to decode JSON response: {e}")
         return False
 
 # Main processing function
@@ -60,6 +70,6 @@ def process_magazines(file_path, batch_size=10, max_records=None):
 
 
 batch_size = 10
-max_records = 50
+max_records = 100
 
-process_magazines("fake_magazines.csv", batch_size, max_records)
+process_magazines("app/fake_magazines.csv", batch_size, max_records)
