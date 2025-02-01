@@ -6,8 +6,10 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# selected this model looking at its speed and performance ratio
 model = SentenceTransformer("multi-qa-MiniLM-L6-cos-v1")  
 
+# utlity method to create embedding of content field of magazine
 def get_embeddings(text: str):
     return model.encode(text)
 

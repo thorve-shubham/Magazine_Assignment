@@ -12,8 +12,7 @@ logger = logging.getLogger(__name__)
 # Create database tables
 Base.metadata.create_all(bind=engine)
 
-#SQLAlchemy lack support to create tsvector column
-# add_tsvector_column_if_not_exists()
+#create required indexes
 create_indexes()
 
 app = FastAPI(title="Magazine API")
