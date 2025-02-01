@@ -428,7 +428,7 @@ Expected Output - Magazines related to healthcare
 
 Expected Output - Magazines related to french food
 
-### Example 3 - Search Query - "outespace"
+### Example 3 - Search Query - "outerspace"
 
 Expected Output - Magazines related to space travel
 
