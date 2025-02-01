@@ -44,13 +44,3 @@ def search_magazine(db: Session = Depends(get_db),
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     
-@router.get("/magazine/analyze", status_code=status.HTTP_200_OK)
-def search_magazine(db: Session = Depends(get_db),
-                    search: str = Query(None, description="Search query for magazines"),
-                    page: int = Query(1, description="Search query for magazines"),
-                    page_size: int = Query(10, description="Search query for magazines")):
-    try:
-        logger.info(f"Received a search request with query : {search}, page: {page}, page_size: {page_size}", )
-        return analyze_combined_search(db=db,query=search, page=page, page_size=page_size)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
