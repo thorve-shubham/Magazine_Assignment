@@ -50,16 +50,16 @@ def process_magazines(file_path, batch_size=10, max_records=None):
         for i in range(0, len(magazines), batch_size):
             batch = magazines[i:i+batch_size]
             success = call_api(batch)
-            # print(batch)
+            
             if not success:
                 logger.error("Error while processing batch, halting further operations.")
-                break  # Exit the loop if the API call fails
+                break
 
     except Exception as e:
         logger.error(f"Error during processing: {e}")
 
 
-batch_size = 10  # Process 10 records at a time
-max_records = 50  # Limit the processing to 50 records, change to None for all records
+batch_size = 10
+max_records = 50
 
 process_magazines("fake_magazines.csv", batch_size, max_records)
