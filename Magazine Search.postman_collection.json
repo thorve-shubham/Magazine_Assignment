@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "482a3fd7-f914-4d3e-a9d1-59102c137b77",
+		"name": "Magazine Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41715579"
+	},
+	"item": [
+		{
+			"name": "Add Magazine",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"title\": \"The Future of Quantum Computing\",\r\n        \"author\": \"Dr. Alice Zhang\",\r\n        \"category\": \"Technology\",\r\n        \"content\": \"Quantum computing promises to revolutionize industries by solving complex problems faster than classical computers. Researchers are now focusing on overcoming quantum decoherence to make these machines more reliable.\",\r\n        \"publish_date\": \"2023-09-15\"\r\n    },\r\n    {\r\n        \"title\": \"Exploring the Depths of the Mariana Trench\",\r\n        \"author\": \"Marine Biologist John Doe\",\r\n        \"category\": \"Science\",\r\n        \"content\": \"Recent expeditions to the Mariana Trench have uncovered new species that thrive in extreme pressure. These discoveries could provide insights into the origins of life on Earth.\",\r\n        \"publish_date\": \"2023-08-22\"\r\n    },\r\n    {\r\n        \"title\": \"The Renaissance of Classical Music\",\r\n        \"author\": \"Emily Carter\",\r\n        \"category\": \"Music\",\r\n        \"content\": \"Classical music is experiencing a resurgence as young composers blend traditional techniques with modern sounds. This fusion is attracting a new generation of listeners to concert halls.\",\r\n        \"publish_date\": \"2023-07-30\"\r\n    },\r\n    {\r\n        \"title\": \"Advancements in CRISPR Technology\",\r\n        \"author\": \"Dr. Sarah Lin\",\r\n        \"category\": \"Biotechnology\",\r\n        \"content\": \"CRISPR technology is being refined to increase its precision in gene editing. This could lead to breakthroughs in treating genetic disorders and improving crop resilience.\",\r\n        \"publish_date\": \"2023-06-18\"\r\n    },\r\n    {\r\n        \"title\": \"The Art of French Pastry\",\r\n        \"author\": \"Chef Pierre Lambert\",\r\n        \"category\": \"Culinary\",\r\n        \"content\": \"French pastry chefs are innovating with traditional recipes to create lighter, more flavorful desserts. Techniques like sous-vide are being adapted for baking to enhance texture and taste.\",\r\n        \"publish_date\": \"2023-05-25\"\r\n    },\r\n    {\r\n        \"title\": \"Virtual Reality in Education\",\r\n        \"author\": \"Tech Educator Rachel Gomez\",\r\n        \"category\": \"Education\",\r\n        \"content\": \"Virtual reality is transforming classrooms by providing immersive learning experiences. Students can now explore historical sites or conduct virtual science experiments from their desks.\",\r\n        \"publish_date\": \"2023-04-12\"\r\n    },\r\n    {\r\n        \"title\": \"The Rise of Sustainable Fashion\",\r\n        \"author\": \"Fashion Critic Mia Johnson\",\r\n        \"category\": \"Fashion\",\r\n        \"content\": \"Sustainable fashion is gaining momentum as designers focus on eco-friendly materials and ethical production methods. Consumers are increasingly supporting brands that prioritize environmental responsibility.\",\r\n        \"publish_date\": \"2023-03-09\"\r\n    },\r\n    {\r\n        \"title\": \"Understanding Black Holes\",\r\n        \"author\": \"Astrophysicist Dr. Neil Carter\",\r\n        \"category\": \"Astronomy\",\r\n        \"content\": \"Recent studies have provided new insights into the behavior of black holes and their impact on surrounding galaxies. These findings help scientists understand the fundamental laws of the universe.\",\r\n        \"publish_date\": \"2023-02-17\"\r\n    },\r\n    {\r\n        \"title\": \"The Evolution of Digital Art\",\r\n        \"author\": \"Digital Artist Sofia Martinez\",\r\n        \"category\": \"Art\",\r\n        \"content\": \"Digital art is evolving with advancements in software that allow for more realistic textures and lighting. Artists are pushing boundaries by integrating AI to create dynamic, interactive pieces.\",\r\n        \"publish_date\": \"2023-01-24\"\r\n    },\r\n    {\r\n        \"title\": \"Breakthroughs in Renewable Energy\",\r\n        \"author\": \"Environmental Scientist Dr. Omar Yusuf\",\r\n        \"category\": \"Environment\",\r\n        \"content\": \"Innovations in solar panel technology are making renewable energy more efficient and affordable. These advancements are crucial for reducing global dependence on fossil fuels.\",\r\n        \"publish_date\": \"2022-12-15\"\r\n    },\r\n    {\r\n        \"title\": \"The Psychology of Social Media\",\r\n        \"author\": \"Psychologist Dr. Hannah Lee\",\r\n        \"category\": \"Psychology\",\r\n        \"content\": \"Social media usage is being studied for its effects on mental health and social behavior. Researchers are finding that moderation and mindful engagement can mitigate negative impacts.\",\r\n        \"publish_date\": \"2022-11-08\"\r\n    },\r\n    {\r\n        \"title\": \"Modern Architecture Trends\",\r\n        \"author\": \"Architect Daniel Kim\",\r\n        \"category\": \"Architecture\",\r\n        \"content\": \"Contemporary architecture is focusing on sustainability and smart technology integration. Buildings are not only becoming more energy-efficient but also more adaptable to the needs of their occupants.\",\r\n        \"publish_date\": \"2022-10-03\"\r\n    },\r\n    {\r\n        \"title\": \"The World of Competitive Gaming\",\r\n        \"author\": \"Gaming Analyst Chris Thompson\",\r\n        \"category\": \"Gaming\",\r\n        \"content\": \"Esports continues to grow, with tournaments offering multi-million dollar prizes and attracting global audiences. This surge is reshaping perceptions of gaming as a legitimate career path.\",\r\n        \"publish_date\": \"2022-09-19\"\r\n    },\r\n    {\r\n        \"title\": \"Innovations in Automotive Design\",\r\n        \"author\": \"Automotive Engineer Lisa Chang\",\r\n        \"category\": \"Automotive\",\r\n        \"content\": \"Electric vehicles are at the forefront of automotive innovation, with improvements in battery life and charging infrastructure. Designers are also focusing on enhancing user experience with advanced interfaces.\",\r\n        \"publish_date\": \"2022-08-14\"\r\n    },\r\n    {\r\n        \"title\": \"The Impact of AI on Healthcare\",\r\n        \"author\": \"Health Tech Expert Dr. Raj Patel\",\r\n        \"category\": \"Healthcare\",\r\n        \"content\": \"Artificial intelligence is revolutionizing healthcare by improving diagnostic accuracy and personalizing treatment plans. AI-driven tools are enabling doctors to predict patient outcomes more effectively.\",\r\n        \"publish_date\": \"2022-07-22\"\r\n    },\r\n    {\r\n        \"title\": \"Exploring Ancient Civilizations\",\r\n        \"author\": \"Historian Dr. Emily Tran\",\r\n        \"category\": \"History\",\r\n        \"content\": \"Archaeological discoveries are shedding light on the daily lives of ancient civilizations. These findings help historians piece together the complex social structures of the past.\",\r\n        \"publish_date\": \"2022-06-30\"\r\n    },\r\n    {\r\n        \"title\": \"The Science of Happiness\",\r\n        \"author\": \"Positive Psychologist Dr. Mark Benson\",\r\n        \"category\": \"Wellness\",\r\n        \"content\": \"Research in positive psychology is uncovering the practices that contribute to long-term happiness. Techniques like gratitude journaling and mindfulness are proving effective in enhancing well-being.\",\r\n        \"publish_date\": \"2022-05-18\"\r\n    },\r\n    {\r\n        \"title\": \"The Future of Space Travel\",\r\n        \"author\": \"Aerospace Engineer Dr. Susan Choi\",\r\n        \"category\": \"Aerospace\",\r\n        \"content\": \"Space agencies are developing technologies for longer manned missions, including to Mars. Innovations in life support and propulsion systems are critical for the success of these endeavors.\",\r\n        \"publish_date\": \"2022-04-11\"\r\n    },\r\n    {\r\n        \"title\": \"The Revival of Handwritten Letters\",\r\n        \"author\": \"Cultural Historian Dr. Angela Moreno\",\r\n        \"category\": \"Culture\",\r\n        \"content\": \"In a digital age, handwritten letters are making a comeback as a personal and meaningful way to communicate. This revival is part of a broader trend towards valuing authenticity and craftsmanship.\",\r\n        \"publish_date\": \"2022-03-07\"\r\n    },\r\n    {\r\n        \"title\": \"Advancements in Robotics\",\r\n        \"author\": \"Robotics Engineer Dr. Ethan Bradley\",\r\n        \"category\": \"Robotics\",\r\n        \"content\": \"Robotics technology is advancing rapidly, with robots becoming more autonomous and capable of complex tasks. These developments are opening up new possibilities in manufacturing, service, and exploration.\",\r\n        \"publish_date\": \"2022-02-01\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/magazine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"magazine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Magazine - Approach 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/magazine/best?search={{search}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"magazine",
+						"best"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "{{search}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/magazine/best?search=graphic card",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"magazine",
+						"best"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "graphic card"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Magazine - Approach 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/magazine?search={{search}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"magazine"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "{{search}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
